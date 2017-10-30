@@ -1,0 +1,22 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+		console.log('send request');
+		$.ajax({
+    url : "http://10.0.3.23:8069/restapi/farmerdetail/",
+    type: "POST",
+	dataType: 'json',
+    data : { 'username' : 'Apoorv', "csrfmiddlewaretoken": '{{ csrf_token }}' },
+    success: function(data)
+    {
+        //data - response from server
+		console.log(data);
+		$('#request').html(data.farmer_detail);
+    }
+});	
+
+	
+</script>
+<h1>The Farmer details are displayed on this page.</h1>
+
+<!--<button onclick="getfarmersdetails()">Click here to get farmers details.</button> -->
+<div id='request'></div>
