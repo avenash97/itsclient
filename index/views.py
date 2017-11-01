@@ -12,52 +12,52 @@ def index(request):
 
 def index1(request):
 	data = coreapi.Client()
-	schema = data.get("http://10.0.3.23:8050/household/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/household/")
 	with open('itsclient/static/json/household.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/farm/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/farm/")
 	with open('itsclient/static/json/farm.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/well/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/well/")
 	with open('itsclient/static/json/well.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/member/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/member/")
 	with open('itsclient/static/json/member.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/season/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/season/")
 	with open('itsclient/static/json/season.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/crop/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/crop/")
 	with open('itsclient/static/json/crop.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/storage/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/storage/")
 	with open('itsclient/static/json/storage.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/storagephoto/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/storagephoto/")
 	with open('itsclient/static/json/storagephoto.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/farmphoto/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/farmphoto/")
 	with open('itsclient/static/json/farmphoto.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/householdphoto/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/householdphoto/")
 	with open('itsclient/static/json/householdphoto.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/wellphoto/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/wellphoto/")
 	with open('itsclient/static/json/wellphoto.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/wellvideo/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/wellvideo/")
 	with open('itsclient/static/json/wellvideo.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/householdvideo/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/householdvideo/")
 	with open('itsclient/static/json/householdvideo.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/farmvideo/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/farmvideo/")
 	with open('itsclient/static/json/farmvideo.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/storagevideo/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/storagevideo/")
 	with open('itsclient/static/json/storagevideo.json', 'w') as outfile:
 		json.dump(schema, outfile)
-	schema = data.get("http://10.0.3.23:8050/householdaudio/")
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/householdaudio/")
 	with open('itsclient/static/json/householdaudio.json', 'w') as outfile:
 		json.dump(schema, outfile)
 	return render(request, 'index/index1.html')
