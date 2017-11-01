@@ -112,7 +112,7 @@ function setMap(position) {
 				}
 				if(data[row].monthly_income<40000){
 			var house_icon = {
-			url:"/static/img/index1.png", 
+			url:"../../static/img/index1.png", 
 			scaledSize: new google.maps.Size(5*data[row].number_of_member,5*data[row].number_of_member), 
 			origin: new google.maps.Point(0,0), 
 			anchor: new google.maps.Point(0, 0)
@@ -124,7 +124,7 @@ function setMap(position) {
 				});
 				google.maps.event.addListener(marker, 'mouseover', (function(marker, row) {
 					return function() {
-						infowindow.setContent("<b> Members : </b>"+data[row].number_of_member+ "<br><br>"+"<b>Income(per month) :</b> "+data[row].monthly_income+ "<br><br>" +'<img src="https://kisan-vikas.herokuapp.com'+data1[row].pic_name+'">');
+						infowindow.setContent("<b> Members : </b>"+data[row].number_of_member+ "<br><br>"+"<b>Income(per month) :</b> "+data[row].monthly_income+ "<br><br>" +'<img src="http://kisan-vikas-server.herokuapp.com'+data1[row].pic_name+'">');
 						infowindow.open(map, marker);
 					}
 				}
@@ -163,7 +163,7 @@ function setMap(position) {
 			google.maps.event.addListener(marker, 'mouseover', (function(marker, row) {
 
 				return function() {
-					infowindow.setContent("<b>members : </b>"+data[row].number_of_member+ "<br><br>"+"<b>income :</b> "+data[row].monthly_income+ "" + "<br><br>" + '<img src="https://kisan-vikas.herokuapp.com' + data1[row].pic_name + '">');
+					infowindow.setContent("<b>members : </b>"+data[row].number_of_member+ "<br><br>"+"<b>income :</b> "+data[row].monthly_income+ "" + "<br><br>" + '<img src="http://kisan-vikas-server.herokuapp.com' + data1[row].pic_name + '">');
 					infowindow.open(map, marker);
 				}
 			}
@@ -178,7 +178,7 @@ function setMap(position) {
 			for (row in data){
 				for(temp in data1){
 				var house_icon = {
-					url:"/static/img/well.jpg", 
+					url:"../../static/img/well.jpg", 
 					scaledSize: new google.maps.Size(20,20), 
 					origin: new google.maps.Point(0,0), 
 					anchor: new google.maps.Point(0, 0)
@@ -189,7 +189,7 @@ function setMap(position) {
 				});
 				google.maps.event.addListener(marker, 'mouseover', (function(marker, row) {
 					return function() {
-						infowindow.setContent("<b>Depth : </b>"+data[row].depth+"<br> <br>"+" <b>Yield :</b> "+ data[row].average_yield  + "<br><br>" + '<img src="https://kisan-vikas.herokuapp.com' + data1[row].pic_name + '">');
+						infowindow.setContent("<b>Depth : </b>"+data[row].depth+"<br> <br>"+" <b>Yield :</b> "+ data[row].average_yield  + "<br><br>" + '<img src="http://kisan-vikas-server.herokuapp.com' + data1[row].pic_name + '">');
 						infowindow.open(map, marker);
 					}
 				}
@@ -227,7 +227,7 @@ function setMap(position) {
 					{
 						return function() 
 						{
-							infowindow.setContent("<b>Depth : </b>"+data[row].depth+"<br> <br>"+" <b>Yield :</b> "+ data[row].average_yield  + "<br><br>" + '<img src="https://kisan-vikas.herokuapp.com' + data1[row].pic_name + '">');
+							infowindow.setContent("<b>Depth : </b>"+data[row].depth+"<br> <br>"+" <b>Yield :</b> "+ data[row].average_yield  + "<br><br>" + '<img src="http://kisan-vikas-server.herokuapp.com' + data1[row].pic_name + '">');
 							infowindow.open(map, marker);
 						}
 					}
@@ -244,7 +244,7 @@ function setMap(position) {
 			for (row in data){
 				for(temp in data1){
 					var house_icon = {
-					url:"/static/img/storage.png", 
+					url:"../../static/img/storage.png", 
 					scaledSize: new google.maps.Size(20,20), 
 					origin: new google.maps.Point(0,0), 
 					anchor: new google.maps.Point(0, 0)
@@ -255,7 +255,7 @@ function setMap(position) {
 				});
 				google.maps.event.addListener(marker, 'mouseover', (function(marker, row) {
 					return function() {
-						infowindow.setContent("<b>Owner : </b>"+data[row].owner_name+"<br> <br>"+" <b>Capacity :</b> "+ data[row].storage + "<br><br>" + '<img src="https://kisan-vikas.herokuapp.com' + data1[row].pic_name + '">');
+						infowindow.setContent("<b>Owner : </b>"+data[row].owner_name+"<br> <br>"+" <b>Capacity :</b> "+ data[row].storage + "<br><br>" + '<img src="http://kisan-vikas-server.herokuapp.com' + data1[row].pic_name + '">');
 						infowindow.open(map, marker);
 					}
 				}
@@ -285,7 +285,7 @@ function setMap(position) {
 			});
 			google.maps.event.addListener(marker, 'mouseover', (function(marker,row) {
 				return function() {
-				infowindow.setContent("<b>Owner : </b>"+data[row].owner_name+"<br> <br>"+" <b>Capacity :</b> "+ data[row].storage + "<br><br>" + '<img src="https://kisan-vikas.herokuapp.com' + data1[row].pic_name + '">');
+				infowindow.setContent("<b>Owner : </b>"+data[row].owner_name+"<br> <br>"+" <b>Capacity :</b> "+ data[row].storage + "<br><br>" + '<img src="http://kisan-vikas-server.herokuapp.com' + data1[row].pic_name + '">');
 				infowindow.open(map, marker);
 				}
 			}
@@ -320,7 +320,7 @@ function setMap(position) {
 
 		}
 	});
-	var iconBase = '/static/img/';
+	var iconBase = '../../static/img/';
         var icons = {
           House1: {
             name: 'Household(income<40k/month)',
