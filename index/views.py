@@ -75,7 +75,7 @@ def landlord(request):
 	return render(request, 'index/landlords.html')
 
 def wells(request):
-	return render(request, 'index/wells.html')
+	return render(request, 'index/new.html')
 
 def household(request):
 	return render(request, 'index/household.html')	
