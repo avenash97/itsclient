@@ -112,7 +112,7 @@ function setMap(position) {
 				}
 				if(data[row].monthly_income<40000){
 			var house_icon = {
-			url:"../../static/img/index1.png", 
+			url:"/static/img/index1.png", 
 			scaledSize: new google.maps.Size(5*data[row].number_of_member,5*data[row].number_of_member), 
 			origin: new google.maps.Point(0,0), 
 			anchor: new google.maps.Point(0, 0)
@@ -178,7 +178,7 @@ function setMap(position) {
 			for (row in data){
 				for(temp in data1){
 				var house_icon = {
-					url:"../../static/img/well.jpg", 
+					url:"/static/img/well.jpg", 
 					scaledSize: new google.maps.Size(20,20), 
 					origin: new google.maps.Point(0,0), 
 					anchor: new google.maps.Point(0, 0)
@@ -244,7 +244,7 @@ function setMap(position) {
 			for (row in data){
 				for(temp in data1){
 					var house_icon = {
-					url:"../../static/img/storage.png", 
+					url:"/static/img/storage.png", 
 					scaledSize: new google.maps.Size(20,20), 
 					origin: new google.maps.Point(0,0), 
 					anchor: new google.maps.Point(0, 0)
@@ -320,7 +320,7 @@ function setMap(position) {
 
 		}
 	});
-	var iconBase = '../../static/img/';
+	var iconBase = '/static/img/';
         var icons = {
           House1: {
             name: 'Household(income<40k/month)',
