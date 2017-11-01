@@ -25,7 +25,7 @@
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script type="text/javascript">
 $.getJSON( "../../static/json/well.json", function( data ) {
-	var viewer1 = new Cesium.Viewer('cesiumContainer');
+	var viewer = new Cesium.Viewer('cesiumContainer');
 	for (row in data){
 
 		var temp;
@@ -53,7 +53,7 @@ $.getJSON( "../../static/json/well.json", function( data ) {
     }
 	});
 }
-viewer1.zoomTo(viewer1.entities); 
+viewer.zoomTo(viewer.entities); 
 });
 
 </script>
