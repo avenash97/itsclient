@@ -78,5 +78,5 @@ def wells(request):
 	return render(request, 'index/new.html')
 
 def household(request):
-	return render(request, 'index/newmap.html')	
+	return render(request, 'index/household.html')	
 
