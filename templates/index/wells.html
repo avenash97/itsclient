@@ -47,7 +47,7 @@ $.getJSON( "../../static/json/well.json", function( data ) {
     }
 	});
 }
-viewer.zoomTo(viewer.entities);
+viewer.zoomTo(viewer.entities); });
 </script>
 <script type="text/javascript">
 $.getJSON( "../../static/json/storage.json", function( data ) {
@@ -68,7 +68,7 @@ $.getJSON( "../../static/json/storage.json", function( data ) {
 		console.log("hello");
 		var greenCylinder = viewer.entities.add({
 	    name : 'Yield : '+data[row].average_yield+'\n'+'Depth : '+data[row].depth,
-	    position: Cesium.Cartesian3.fromDegrees(data[row].location.coordinates[0], data[row].location.coordinates[1], data[row].depth/2),
+	    position: Cesium.Cartesian3.fromDegrees(data[row].location.coordinates[0], data[row].location.coordinates[1], data[row].storage/10),
 	    
 	    cylinder : {
 	        length : data[row].storage,
