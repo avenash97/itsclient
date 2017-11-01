@@ -71,7 +71,7 @@ $.getJSON( "../../static/json/storage.json", function( data ) {
 	    position: Cesium.Cartesian3.fromDegrees(data[row].location.coordinates[0], data[row].location.coordinates[1], data[row].depth/2),
 	    
 	    cylinder : {
-	        length : data[row].depth*100,
+	        length : data[row].storage,
 	        topRadius : 2000,
 	        bottomRadius : 5000,
 	        material : temp,
