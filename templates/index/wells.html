@@ -47,9 +47,8 @@ $.getJSON( "../../static/json/well.json", function( data ) {
     }
 	});
 }
-viewer.zoomTo(viewer.entities); });
-</script>
-<script type="text/javascript">
+viewer.zoomTo(viewer.entities); 
+});
 $.getJSON( "../../static/json/storage.json", function( data ) {
 	var viewer = new Cesium.Viewer('cesiumContainer');
 	for (row in data){
@@ -82,8 +81,9 @@ $.getJSON( "../../static/json/storage.json", function( data ) {
 }
 
 	viewer.zoomTo(viewer.entities);
-	
-	/*
+	});
+	</script>
+<!--	/*
 		var marker
 		var well_icon = {
 			url:"../../static/img/dug_well.png", // url
@@ -106,7 +106,7 @@ $.getJSON( "../../static/json/storage.json", function( data ) {
 						)(marker, row));
 						marker.setMap(map);
 					}*/
-	});
-</script>
+	
+-->
 </body>
 </html>
