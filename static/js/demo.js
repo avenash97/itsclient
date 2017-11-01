@@ -45,10 +45,12 @@ demo = {
             
         var options = {
           seriesBarDistance: 10,
-          axisX: {
-            showGrid: false
+          reverseData:true,
+          horizontalBars:true.
+          axisY: {
+            offset:70
           },
-          height: "245px"
+         
         };
             
         var responsiveOptions = [
@@ -62,7 +64,7 @@ demo = {
           }]
         ];
             
-        Chartist.Bar('#chartActivity', data, options, responsiveOptions);
+        Chartist.Bar('#chartActivity', data, options);
       });
     });
           
