@@ -99,7 +99,7 @@ function setMap(position) {
 	$.getJSON( "../../static/json/household.json", function( data ) {
 		var marker
 		var house_icon = {
-			url:"../../static/img/house.png", 
+			url:"../static/img/house.png", 
 			scaledSize: new google.maps.Size(30, 30), 
 			origin: new google.maps.Point(0,0), 
 			anchor: new google.maps.Point(0, 0)
@@ -124,7 +124,7 @@ function setMap(position) {
 	$.getJSON( "../../static/json/well.json", function( data ) {
 		var marker
 		var well_icon = {
-			url:"../../static/img/well.png", // url
+			url:"../static/img/well.png", // url
 			scaledSize: new google.maps.Size(30, 30), // scaled size
 			origin: new google.maps.Point(0,0), // origin
 			anchor: new google.maps.Point(0, 0) // anchor
