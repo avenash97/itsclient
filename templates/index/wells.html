@@ -48,7 +48,6 @@ $.getJSON( "../../static/json/well.json", function( data ) {
 	});
 }
 viewer1.zoomTo(viewer1.entities); 
-});
 $.getJSON( "../../static/json/storage.json", function( data ) {
 	var viewer = new Cesium.Viewer('cesiumContainer');
 	for (row in data){
@@ -81,7 +80,9 @@ $.getJSON( "../../static/json/storage.json", function( data ) {
 }
 
 	viewer.zoomTo(viewer.entities);
-	});
+});
+});
+
 	</script>
 <!--	/*
 		var marker
