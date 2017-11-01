@@ -46,11 +46,10 @@ demo = {
         var options = {
           seriesBarDistance: 10,
           reverseData:true,
-          horizontalBars:true.
+          horizontalBars:true,
           axisY: {
             offset:70
-          },
-         
+          }
         };
             
         var responsiveOptions = [
