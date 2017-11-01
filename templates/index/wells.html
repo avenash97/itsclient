@@ -47,7 +47,42 @@ $.getJSON( "../../static/json/well.json", function( data ) {
     }
 	});
 }
+viewer.zoomTo(viewer.entities);
+</script>
+<script type="text/javascript">
+$.getJSON( "../../static/json/storage.json", function( data ) {
+	var viewer = new Cesium.Viewer('cesiumContainer');
+	for (row in data){
+
+		var temp;
+		if (data[row].storage<9000){
+			temp = Cesium.Color.BLUE.withAlpha(0.5);
+		}
+		else {
+			temp = Cesium.Color.GREEN.withAlpha(0.5);
+		}
+		if (data[row].storage>9000 && data[row].storage<11000){
+			temp = Cesium.Color.RED.withAlpha(0.5);
+		}
+		console.log(data[row].location.coordinates[0], data[row].location.coordinates[1]);
+		console.log("hello");
+		var greenCylinder = viewer.entities.add({
+	    name : 'Yield : '+data[row].average_yield+'\n'+'Depth : '+data[row].depth,
+	    position: Cesium.Cartesian3.fromDegrees(data[row].location.coordinates[0], data[row].location.coordinates[1], data[row].depth/2),
+	    
+	    cylinder : {
+	        length : data[row].depth*100,
+	        topRadius : 2000,
+	        bottomRadius : 5000,
+	        material : temp,
+	        outline : true,
+	        outlineColor : Cesium.Color.DARK_GREEN
+    }
+	});
+}
+
 	viewer.zoomTo(viewer.entities);
+	
 	/*
 		var marker
 		var well_icon = {
