@@ -46,14 +46,14 @@ function makeTableHTML(myArray,array) {
 }
 
 function hello(farm,households){
-	$.getJSON( "../static/json/member.json", function( data ) {
+	$.getJSON( "../../static/json/member.json", function( data ) {
 		for(row in data){
 			if(data[row].HID==households && data[row].relation=="Head"){
 				var owner=data[row].name
 			} 
 		}
 
-		$.getJSON( "../static/json/crop.json", function( data ) {
+		$.getJSON( "../../static/json/crop.json", function( data ) {
 			var crop=[]
 			var yield=[]
 			for(row in data){
@@ -70,7 +70,7 @@ function hello(farm,households){
 function hi(farm){
 	if(farm){ 
 		$('#myModal').modal();
-		$.getJSON( "../static/json/crop.json", function( data ) {
+		$.getJSON( "../../static/json/crop.json", function( data ) {
 			var piedata=[["crop","extent"]]
 			for (row in data){
 				var temp=[]
@@ -97,14 +97,14 @@ function setMap(position) {
 	// the bounds of the image, and a reference to the map.
 
 	var infowindow = new google.maps.InfoWindow();
-	$.getJSON( "../static/json/household.json", function( data ) {
+	$.getJSON( "../../static/json/household.json", function( data ) {
 		var marker
-			$.getJSON( "../static/json/householdphoto.json", function( data1 ){
+			$.getJSON( "../../static/json/householdphoto.json", function( data1 ){
 			for (row in data){
 				for(temp in data1){
 					if(data[row].monthly_income>=40000){
 				var house_icon = {
-					url:"../static/img/index.png", 
+					url:"../../static/img/index.png", 
 					scaledSize: new google.maps.Size(5*data[row].number_of_member,5*data[row].number_of_member), 
 					origin: new google.maps.Point(0,0), 
 					anchor: new google.maps.Point(0, 0)
@@ -112,7 +112,7 @@ function setMap(position) {
 				}
 				if(data[row].monthly_income<40000){
 			var house_icon = {
-			url:"../static/img/index1.png", 
+			url:"../../static/img/index1.png", 
 			scaledSize: new google.maps.Size(5*data[row].number_of_member,5*data[row].number_of_member), 
 			origin: new google.maps.Point(0,0), 
 			anchor: new google.maps.Point(0, 0)
@@ -172,13 +172,13 @@ function setMap(position) {
 			}}}
 		});
 	});*/
-	$.getJSON( "../static/json/well.json", function( data ) {
+	$.getJSON( "../../static/json/well.json", function( data ) {
 		var marker
-			$.getJSON( "../static/json/wellphoto.json", function( data1 ){
+			$.getJSON( "../../static/json/wellphoto.json", function( data1 ){
 			for (row in data){
 				for(temp in data1){
 				var house_icon = {
-					url:"../static/img/well.jpg", 
+					url:"../../static/img/well.jpg", 
 					scaledSize: new google.maps.Size(20,20), 
 					origin: new google.maps.Point(0,0), 
 					anchor: new google.maps.Point(0, 0)
@@ -238,13 +238,13 @@ function setMap(position) {
 		});
 	});*/
 
-	$.getJSON( "../static/json/storage.json", function( data ) {
+	$.getJSON( "../../static/json/storage.json", function( data ) {
 		var marker
 			$.getJSON( "../static/json/storagephoto.json", function( data1 ){
 			for (row in data){
 				for(temp in data1){
 					var house_icon = {
-					url:"../static/img/storage.png", 
+					url:"../../static/img/storage.png", 
 					scaledSize: new google.maps.Size(20,20), 
 					origin: new google.maps.Point(0,0), 
 					anchor: new google.maps.Point(0, 0)
@@ -295,7 +295,7 @@ function setMap(position) {
 	});
 	});*/
 
-	$.getJSON( "../static/json/farm.json", function( data ) {
+	$.getJSON( "../../static/json/farm.json", function( data ) {
 		for (row in data){ 
 			var path=[]
 			for (rows in data[row].plot.coordinates[0]){
@@ -320,7 +320,7 @@ function setMap(position) {
 
 		}
 	});
-	var iconBase = '../static/img/';
+	var iconBase = '../../static/img/';
         var icons = {
           House1: {
             name: 'Household(income<40k/month)',
