@@ -89,10 +89,9 @@ function lease(farm){
 	if(farm){ 
 		$('#myModal1').modal();
 		$.getJSON( "../../static/json/leasefarm.json", function( data ) {
-			var piedata=[["crop","extent"]]
+			var land_area=0;
+			var land_cost=0;
 			for (row in data){
-				var land_area=0;
-				var land_cost=0;
 				console.log("farm"+farm);
 				console.log("ID"+data[row].LFID);
 				if (data[row].LFID==farm){
