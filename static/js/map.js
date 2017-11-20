@@ -91,16 +91,18 @@ function lease(farm){
 		$.getJSON( "../../static/json/leasefarm.json", function( data ) {
 			var piedata=[["crop","extent"]]
 			for (row in data){
-				var land_area;
-				var land_cost;
+				var land_area=0;
+				var land_cost=0;
 				console.log("farm"+farm);
 				console.log("ID"+data[row].LFID);
 				if (data[row].LFID==farm){
+					land_area=data[row].area;
+					land_cost=data[row].cost;
 					console.log("area "+data[row].area);
 					console.log("cost "+data[row].cost);
 				}
 			}
-			document.getElementById('leasedetails').innerHTML="<p><b>Total Area </b>: "+land_area+" hectares</p><br>";
+			document.getElementById('leasedetails').innerHTML="<p><b>Total Area </b>: "+land_area+" hectares</p><br><p><b>Land Cost </b>: "+land_cost+" Rupees</p><br>";
 		});
 	}
 }
