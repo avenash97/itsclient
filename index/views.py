@@ -12,6 +12,7 @@ def index(request):
 
 def index1(request):
 	data = coreapi.Client()
+	
 	schema = data.get("https://kisan-vikas-server.herokuapp.com/household/")
 	with open('static/json/household.json', 'w') as outfile:
 		json.dump(schema, outfile)
