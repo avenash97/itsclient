@@ -84,6 +84,22 @@ function hi(farm){
 		});
 	}
 }
+function lease(farm){
+	if(farm){ 
+		$('#myModal').modal();
+		$.getJSON( "../../static/json/leasefarm.json", function( data ) {
+			var piedata=[["crop","extent"]]
+			for (row in data){
+				var temp=[]
+					temp.push(data[row].cost)
+					temp.push(data[row].area)
+					piedata.push(temp)
+				  
+			}
+		});
+	}
+}
+
 
 function setMap(position) {
 	var myCenter = new google.maps.LatLng(12.9716,78.7541);
@@ -200,43 +216,6 @@ function setMap(position) {
 		});
 	});
 
-/*	$.getJSON( "../../static/json/well.json", function( data )
-	{
-		var marker
-		var well_icon =
-		{
-			url:"../../static/img/well.jpg", // url
-			scaledSize: new google.maps.Size(30, 30), // scaled size
-			origin: new google.maps.Point(0,0), // origin
-			anchor: new google.maps.Point(0, 0) // anchor
-		};
-		$.getJSON( "../../static/json/wellphoto.json", function( data1 )
-		{
-		for (row in data)
-		{
-			for(temp in data1)
-			{
-				if(data[row].WID == data1[temp].WID)
-				{
-					marker = new google.maps.Marker
-					({
-						position: new google.maps.LatLng(data[row].location.coordinates[1], data[row].location.coordinates[0]),
-						icon:well_icon,
-					});
-					google.maps.event.addListener(marker, 'mouseover', (function(marker,row) 
-					{
-						return function() 
-						{
-							infowindow.setContent("<b>Depth : </b>"+data[row].depth+"<br> <br>"+" <b>Yield :</b> "+ data[row].average_yield  + "<br><br>" + '<img src="http://kisan-vikas-server.herokuapp.com' + data1[row].pic_name + '">');
-							infowindow.open(map, marker);
-						}
-					}
-			)(marker, row));
-			marker.setMap(map);
-		}}
-		}
-		});
-	});*/
 
 	$.getJSON( "../../static/json/storage.json", function( data ) {
 		var marker
@@ -266,34 +245,6 @@ function setMap(position) {
 		});
 	});
 
-/*	$.getJSON( "../../static/json/storage.json", function( data ) {
-		var marker
-		var well_icon = {
-			url:"../../static/img/storage.png", // url
-			scaledSize: new google.maps.Size(30, 30), // scaled size
-			origin: new google.maps.Point(0,0), // origin
-			anchor: new google.maps.Point(0, 0) // anchor
-		};
-		$.getJSON( "../../static/json/storagephoto.json", function( data1 ) {
-		for (row in data){
-			for(temp in data1){
-				if(data[row].SID == data1[temp].SID){
-				marker = new google.maps.Marker({
-				position: new google.maps.LatLng(data[row].location.coordinates[1], data[row].location.coordinates[0]),
-				map: map,
-				icon:well_icon,
-			});
-			google.maps.event.addListener(marker, 'mouseover', (function(marker,row) {
-				return function() {
-				infowindow.setContent("<b>Owner : </b>"+data[row].owner_name+"<br> <br>"+" <b>Capacity :</b> "+ data[row].storage + "<br><br>" + '<img src="http://kisan-vikas-server.herokuapp.com' + data1[row].pic_name + '">');
-				infowindow.open(map, marker);
-				}
-			}
-			)(marker, row));
-			marker.setMap(map);
-		}}}
-	});
-	});*/
 
 	$.getJSON( "../../static/json/farm.json", function( data ) {
 		for (row in data){ 
@@ -315,6 +266,32 @@ function setMap(position) {
 				return function() {
 					hi(data[row].FID)
 					hello(data[row],data[row].HID)
+				}
+			})(flightPath, row));
+
+		}
+	});
+
+	$.getJSON( "../../static/json/leasefarm.json", function( data ) {
+		for (row in data){ 
+			var path=[]
+			for (rows in data[row].plot.coordinates[0]){
+				path.push(new google.maps.LatLng(data[row].plot.coordinates[0][rows][1],data[row].plot.coordinates[0][rows][0]))
+			}
+
+			var flightPath = new google.maps.Polygon({
+				path: path,
+				strokeColor: "red",
+				strokeOpacity: 1,
+				strokeWeight: 2,
+				fillColor: "red",
+				fillOpacity: 0.4,
+			});   
+			flightPath.setMap(map);
+			google.maps.event.addListener(flightPath, 'click', (function(marker,row) {
+				return function() {
+					lease(data[row].LFID)
+					//hello(data[row],data[row].HID)
 				}
 			})(flightPath, row));
 

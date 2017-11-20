@@ -60,6 +60,12 @@ def index1(request):
 	schema = data.get("https://kisan-vikas-server.herokuapp.com/householdaudio/")
 	with open('static/json/householdaudio.json', 'w') as outfile:
 		json.dump(schema, outfile)
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/leasefarm/")
+	with open('static/json/leasefarm.json', 'w') as outfile:
+		json.dump(schema, outfile)
+	schema = data.get("https://kisan-vikas-server.herokuapp.com/landprice/")
+	with open('static/json/landprice.json', 'w') as outfile:
+		json.dump(schema, outfile)	
 	return render(request, 'index/index1.html')
 
 def technology(request):
