@@ -21,6 +21,6 @@ import django.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/', include('index.urls')),
+    url(r'^', include('index.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

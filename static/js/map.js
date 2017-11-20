@@ -134,9 +134,9 @@ function setMap(position) {
 		}
 		});
 	});
-//	$.getJSON( "../../static/json/household.json", function( data ) {
-//		var marker
-	/*	$.getJSON( "../../static/json/householdphoto.json", function( data1 ) {
+	$.getJSON( "../../static/json/household.json", function( data ) {
+		var marker
+		$.getJSON( "../../static/json/householdphoto.json", function( data1 ) {
 		for (row in data){ 
 			for(temp in data1){
 				if(data[row].HID == data1[temp].HID){
@@ -163,7 +163,7 @@ function setMap(position) {
 			google.maps.event.addListener(marker, 'mouseover', (function(marker, row) {
 
 				return function() {
-					infowindow.setContent("<b>members : </b>"+data[row].number_of_member+ "<br><br>"+"<b>income :</b> "+data[row].monthly_income+ "" + "<br><br>" + '<img src="http://kisan-vikas-server.herokuapp.com' + data1[row].pic_name + '">');
+					infowindow.setContent("<b>members : </b>"+data[row].number_of_member+ "<br><br>"+"<b>income :</b> "+data[row].monthly_income+ "" + "<br><br>" + '<img src="https://kisan-vikas-server.herokuapp.com' + data1[row].pic_name + '">');
 					infowindow.open(map, marker);
 				}
 			}
@@ -171,7 +171,7 @@ function setMap(position) {
 			marker.setMap(map);
 			}}}
 		});
-	});*/
+	});
 	$.getJSON( "../../static/json/well.json", function( data ) {
 		var marker
 			$.getJSON( "../../static/json/wellphoto.json", function( data1 ){
