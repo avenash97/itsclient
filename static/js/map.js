@@ -5,7 +5,8 @@ $( document ).ready(function(){
 
 function drawChart(data) {
 	console.log("Inside drawChart",data);
-	var data = google.visualization.arrayToDataTable(data);
+	data = google.visualization.arrayToDataTable(data);
+	console.log("After",data);
 	var options = {
 		width: 400,
     	height: 300,  
