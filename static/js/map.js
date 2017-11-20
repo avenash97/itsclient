@@ -21,6 +21,7 @@ function drawChart(data) {
 	
 	google.visualization.events.addListener(chart, 'ready', function () {});
 	chart.draw(data, options);
+	console.log("Inside drawChart 11");
 }
 
 function getLocation() {
