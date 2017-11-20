@@ -81,7 +81,7 @@ function hi(farm){
 					piedata.push(temp)
 				}  
 			}
-			console.log("draw chart");
+			console.log(piedata);
 			drawChart(piedata)
 		});
 	}
