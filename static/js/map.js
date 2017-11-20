@@ -96,10 +96,8 @@ function lease(farm){
 				console.log("farm"+farm);
 				console.log("ID"+data[row].LFID);
 				if (data[row].LFID==farm){
-					land_cost=data[row].cost;
-					land_area=data[row].area;
-					console.log("cost "+load_area);
-					console.log("cost "+load_cost);
+					console.log("area "+data[row].area);
+					console.log("cost "+data[row].cost);
 				}
 			}
 			document.getElementById('leasedetails').innerHTML="<p><b>Total Area </b>: "+land_area+" hectares</p><br>";
