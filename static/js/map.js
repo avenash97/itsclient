@@ -101,7 +101,7 @@ function lease(farm){
 					console.log("cost "+data[row].cost);
 				}
 			}
-			document.getElementById('leasedetails').innerHTML="<p><b>Total Area </b>: "+land_area+" hectares</p><br><p><b>Land Cost </b>: "+land_cost+" Rupees</p><br>";
+			document.getElementById('leasedetails').innerHTML="<p><b>Total Area </b>: "+land_area+" hectares</p><br><p><b>Land Cost </b>: "+land_cost+" Rupees per Month</p><br>";
 		});
 	}
 }
@@ -129,7 +129,7 @@ function lease(farm){
 function setMap(position) {
 	var myCenter = new google.maps.LatLng(12.9716,78.7541);
 	var mapCanvas = document.getElementById("map");
-	var mapOptions = {center: myCenter, zoom: 7, mapTypeId: 'terrain'};
+	var mapOptions = {center: myCenter, zoom: 6, mapTypeId: 'terrain'};
 	var map = new google.maps.Map(mapCanvas, mapOptions);
 	var srcImage = 'https://developers.google.com/maps/documentation/' +
 		'javascript/examples/full/images/talkeetna.png';
