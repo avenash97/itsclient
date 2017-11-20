@@ -172,6 +172,7 @@ function setMap(position) {
 		}
 		});
 	});
+	/*
 	$.getJSON( "../../static/json/household.json", function( data ) {
 		var marker
 		$.getJSON( "../../static/json/householdphoto.json", function( data1 ) {
@@ -209,7 +210,8 @@ function setMap(position) {
 			marker.setMap(map);
 			}}}
 		});
-	});
+	});*/
+	
 	$.getJSON( "../../static/json/well.json", function( data ) {
 		var marker
 			$.getJSON( "../../static/json/wellphoto.json", function( data1 ){
@@ -309,7 +311,7 @@ function setMap(position) {
 				fillColor: "red",
 				fillOpacity: 0.4,
 			});   
-			
+
 			flightPath.setMap(map);
 			google.maps.event.addListener(flightPath, 'click', (function(marker,row) {
 				return function() {
