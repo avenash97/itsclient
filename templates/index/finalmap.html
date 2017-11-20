@@ -36,6 +36,7 @@
 	<script type="text/javascript" src="{% static 'index/js/tms_presets.js' %}"></script>
 	<script type="text/javascript" src="{% static 'index/js/script.js' %}"></script>
 	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     <style>
         .modal {
             text-align: center;
@@ -127,7 +128,7 @@
 						<div id="myDiv"></div>
 						<script>
 							var crops=[]
-							var extent=[]
+							var yield=[]
 						    $.getJSON( "../../static/json/crop.json", function( datas ){ 
 						      var plot = []
 						      for (var i=0; i<datas.length;i++){  
@@ -136,19 +137,34 @@
 						        }
 						      }
 						  	for (var i=0; i<datas.length;i++){  
-						        if (extent.indexOf(datas[i].Extent)==-1){
-						          extent.push(datas[i].Extent)
+						        if (yield.indexOf(datas[i].Yield)==-1){
+						          yield.push(datas[i].Yield)
 						        }
 						      }
 						      console.log("Crops"+crops);
-						      console.log("Extent"+extent);
+						      console.log("Extent"+yield);
     							var data = [{
 	  								x: crops,
-									y: extent,
+									y: yield,
 									type: 'bar'
 								}];
+								var layout = {
+								  title: 'Total Yield of Different Crops in a Year ',
+								  font:{
+								    family: 'Raleway, snas-serif'
+								  },
+								  showlegend: false,
+								  xaxis: {
+								    tickangle: -45
+								  },
+								  yaxis: {
+								    zeroline: false,
+								    gridwidth: 2
+								  },
+								  bargap :0.05
+								};
 
-								Plotly.newPlot('myDiv', data);
+								Plotly.newPlot('myDiv', data, layout);
 							});	
   						</script>
 			    	<div class="row ">     <!--On slider -->
@@ -169,29 +185,29 @@
 							</div>
 			      		</div>
 			    	</div>
-			  				</div>
-						</div>
+			  		</div>
+				</div>
 	
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><!--On clicking -->
-			  <div class="modal-dialog">
-			    <div class="modal-content">
-			      <div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="exampleModalLabel">Farm Details</h4>
-			      </div>
-			      <div class="modal-body" >
-			   <div class="container-fluid">
-			    <div class="row">
-			<div class="col-md-8" id="piechart"></div>
-			<div class="col-md-4" id="farmdetails"></div>
-			    </div>
-			   </div>
-			      </div>
-			      <div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      </div>
-			    </div>
-			  </div>
+				<div class="modal-dialog">
+			    	<div class="modal-content">
+			      		<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="exampleModalLabel">Farm Details</h4>
+			      		</div>
+			      		<div class="modal-body" >
+			   				<div class="container-fluid">
+			    				<div class="row">
+									<div class="col-md-8" id="piechart"></div>
+									<div class="col-md-4" id="farmdetails"></div>
+			    				</div>
+			   				</div>
+			      		</div>
+			      		<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      		</div>
+			    	</div>
+				</div>
 			</div>
 
 			<!-- Modal for lease lands -->
