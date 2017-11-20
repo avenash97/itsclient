@@ -84,23 +84,45 @@ function hi(farm){
 		});
 	}
 }
+
 function lease(farm){
 	if(farm){ 
-		$('#myModal').modal();
+		$('#myModal1').modal();
 		$.getJSON( "../../static/json/leasefarm.json", function( data ) {
 			var piedata=[["crop","extent"]]
 			for (row in data){
-				var temp=[]
-					temp.push(data[row].cost)
-					temp.push(data[row].area)
-					piedata.push(temp)
-				  
+				var land_area=[]
+				var land_cost=[]
+				if (data[row].LFID==farm)
+					land_cost.push(data[row].cost)
+					land_area.push(data[row].area)
+				}
 			}
+			document.getElementById('leasedetails').innerHTML="<p><b>Total Area </b>: "+land_area+" hectares</p><br>"
 		});
 	}
 }
+/*
+function lease(farm){
+	$.getJSON( "../../static/json/member.json", function( data ) {
+		for(row in data){
+			if(data[row].HID==households && data[row].relation=="Head"){
+				var owner=data[row].name
+			} 
+		}
 
-
+		$.getJSON( "../../static/json/crop.json", function( data ) {
+			var crop=[]
+			var yield=[]
+			for(row in data){
+				if(data[row].FID==farm.FID && data[row].season==document.getElementById("season").value &&data[row].year==document.getElementById("value").innerHTML){
+					crop.push(data[row].Crop )
+					yield.push(data[row].Yield)					
+				}
+			}
+			document.getElementById('farmdetails').innerHTML="<p><b>Owner</b> : "+owner+"</p><br><p><b>Total Area </b>: "+farm.area+" hectares</p><br>"+makeTableHTML(crop,yield)
+		});
+}*/
 function setMap(position) {
 	var myCenter = new google.maps.LatLng(12.9716,78.7541);
 	var mapCanvas = document.getElementById("map");
