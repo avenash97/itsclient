@@ -91,15 +91,15 @@ function lease(farm){
 		$.getJSON( "../../static/json/leasefarm.json", function( data ) {
 			var piedata=[["crop","extent"]]
 			for (row in data){
-				var land_area=[]
-				var land_cost=[]
+				var land_area;
+				var land_cost;
 				console.log("farm"+farm);
 				console.log("ID"+data[row].LFID);
 				if (data[row].LFID==farm){
-					land_cost.push(data[row].cost)
-					land_area.push(data[row].area)
-					console.log(load_area);
-					console.log(load_cost);
+					land_cost=data[row].cost;
+					land_area=data[row].area;
+					console.log("cost "+load_area);
+					console.log("cost "+load_cost);
 				}
 			}
 			document.getElementById('leasedetails').innerHTML="<p><b>Total Area </b>: "+land_area+" hectares</p><br>";
