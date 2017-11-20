@@ -93,8 +93,8 @@ function lease(farm){
 			for (row in data){
 				var land_area=[]
 				var land_cost=[]
-				console.log(farm);
-				console.log(data[row].LFID);
+				console.log("farm"+farm);
+				console.log("ID"+data[row].LFID);
 				if (data[row].LFID==farm){
 					land_cost.push(data[row].cost)
 					land_area.push(data[row].area)
