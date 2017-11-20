@@ -55,7 +55,7 @@ demo = {
         var responsiveOptions = [
           ['screen and (max-width: 640px)', {
             seriesBarDistance: 10,
-            axisX: {
+            axisY: {
               labelInterpolationFnc: function (value) {
                 return value[0];
               }
@@ -63,7 +63,7 @@ demo = {
           }]
         ];
             
-        Chartist.Bar('#chartActivity', data, options);
+        Chartist.Bar('#chartActivity', data, options,responsiveOptions);
       });
     });
           
