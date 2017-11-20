@@ -309,6 +309,7 @@ function setMap(position) {
 				fillColor: "red",
 				fillOpacity: 0.4,
 			});   
+			
 			flightPath.setMap(map);
 			google.maps.event.addListener(flightPath, 'click', (function(marker,row) {
 				return function() {
