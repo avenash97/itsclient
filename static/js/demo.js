@@ -50,6 +50,7 @@ demo = {
           axisY: {
             offset:70
           }
+          
         };
             
         var responsiveOptions = [

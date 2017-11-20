@@ -93,9 +93,13 @@ function lease(farm){
 			for (row in data){
 				var land_area=[]
 				var land_cost=[]
+				console.log(farm);
+				console.log(data[row].LFID);
 				if (data[row].LFID==farm){
 					land_cost.push(data[row].cost)
 					land_area.push(data[row].area)
+					console.log(load_area);
+					console.log(load_cost);
 				}
 			}
 			document.getElementById('leasedetails').innerHTML="<p><b>Total Area </b>: "+land_area+" hectares</p><br>";
@@ -211,7 +215,7 @@ function setMap(position) {
 			}}}
 		});
 	});*/
-	
+
 	$.getJSON( "../../static/json/well.json", function( data ) {
 		var marker
 			$.getJSON( "../../static/json/wellphoto.json", function( data1 ){
