@@ -62,6 +62,7 @@ function hello(farm,households){
 					yield.push(data[row].Yield)					
 				}
 			}
+			console.log("Draw table");
 			document.getElementById('farmdetails').innerHTML="<p><b>Owner</b> : "+owner+"</p><br><p><b>Total Area </b>: "+farm.area+" hectares</p><br>"+makeTableHTML(crop,yield)
 		});
 	});
@@ -80,6 +81,7 @@ function hi(farm){
 					piedata.push(temp)
 				}  
 			}
+			console.log("draw chart");
 			drawChart(piedata)
 		});
 	}
