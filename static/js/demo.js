@@ -50,7 +50,7 @@ demo = {
           axisY: {
             offset:70,
             showGrid:false
-          }
+          },
           height:"250px"
         };
             
