@@ -127,6 +127,7 @@
 						<div id="myDiv"></div>
 						<script>
 							var crops=[]
+							var extent=[]
 						    $.getJSON( "../../static/json/crop.json", function( datas ){ 
 						      var plot = []
 						      for (var i=0; i<datas.length;i++){  
@@ -134,14 +135,21 @@
 						          crops.push(datas[i].Crop)
 						        }
 						      }
+						  	for (var i=0; i<datas.length;i++){  
+						        if (extent.indexOf(datas[i].Extent)==-1){
+						          extent.push(datas[i].Extent)
+						        }
+						      }
 						      console.log("Crops"+crops);
-    						var data = [{
-  								x: ['giraffes', 'orangutans', 'monkeys'],
-								y: [20, 14, 23],
-								  type: 'bar'
+						      console.log("Extent"+extent);
+    							var data = [{
+	  								x: crops,
+									y: extent,
+									type: 'bar'
 								}];
 
 								Plotly.newPlot('myDiv', data);
+							});	
   						</script>
 			    	<div class="row ">     <!--On slider -->
 			      		<div class="card ">
