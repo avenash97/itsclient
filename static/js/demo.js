@@ -48,8 +48,10 @@ demo = {
           reverseData:true,
           horizontalBars:true,
           axisY: {
-            offset:70
+            offset:70,
+            showGrid:false
           }
+          height:"250px"
         };
             
         var responsiveOptions = [
