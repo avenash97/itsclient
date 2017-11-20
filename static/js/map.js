@@ -93,12 +93,12 @@ function lease(farm){
 			for (row in data){
 				var land_area=[]
 				var land_cost=[]
-				if (data[row].LFID==farm)
+				if (data[row].LFID==farm){
 					land_cost.push(data[row].cost)
 					land_area.push(data[row].area)
 				}
 			}
-			document.getElementById('leasedetails').innerHTML="<p><b>Total Area </b>: "+land_area+" hectares</p><br>"
+			document.getElementById('leasedetails').innerHTML="<p><b>Total Area </b>: "+land_area+" hectares</p><br>";
 		});
 	}
 }
