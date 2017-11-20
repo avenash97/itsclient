@@ -48,8 +48,7 @@ demo = {
           reverseData:true,
           horizontalBars:true,
           axisY: {
-            offset:70,
-            showGrid:false
+            offset:70
           }
         };
             
