@@ -126,6 +126,15 @@
 			    		</div>-->
 						<div id="myDiv"></div>
 						<script>
+							var crops=[]
+						    $.getJSON( "../../static/json/crop.json", function( datas ){ 
+						      var plot = []
+						      for (var i=0; i<datas.length;i++){  
+						        if (crops.indexOf(datas[i].Crop)==-1){
+						          crops.push(datas[i].Crop)
+						        }
+						      }
+						      console.log("Crops"+crops);
     						var data = [{
   								x: ['giraffes', 'orangutans', 'monkeys'],
 								y: [20, 14, 23],
