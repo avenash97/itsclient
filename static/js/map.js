@@ -104,6 +104,7 @@ function hi(farm){
 									      				console.log("inside farm");
 									      				if(data[row].FID==farm)
 									      				{
+									      					console.log("inside compare");
 													        if (landprices.indexOf(datas[i].price)==-1)
 													        {
 													          landprices.push(datas[i].price)
