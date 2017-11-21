@@ -101,7 +101,7 @@ function hi(farm){
 												$.getJSON( "../../static/json/landprice.json", function( datas ){ 
 									      			for (var i=0; i<datas.length;i++)
 									      			{  
-									      				console.log("inside farm");
+									      				console.log("inside farm",data[row].FID,farm);
 									      				if(data[row].FID==farm)
 									      				{
 									      					console.log("inside compare");
