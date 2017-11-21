@@ -188,6 +188,138 @@
 								Plotly.newPlot('myDiv', data, layout);
 							});	
   						</script>
+  					<!--	//////////////////////////////////fake/////////////   -->
+  					<div class="row">
+			      			<div class="col-md-12" >
+								<div class="card " >
+				  					<div class="header">
+				    					<h4 class="title"><p id="demo"></p> Land Price</h4>
+				  					</div>
+				  					<div class="content">
+				    					<div id="myDiv1" class="ct-chart"></div>
+				    						<div class="footer">
+				      		
+				      						<!--<div id="slidecontainer">
+												<input type="range" min="2005" max="2017" style="width:100%" value="2017" class="slider" id="myRange">
+											<p>Value: <span id="dem"></span></p>-->
+				      						</div>
+				    					</div>
+				  					</div>
+								</div>
+			      			</div>
+			    		</div>
+						<script>
+							var price1=[]
+							var year1=[]
+							var price2=[]
+							var year2=[]
+							var price3=[]
+							var year3=[]
+						    
+						    $.getJSON( "../../static/json/landprice.json", function( datas ){ 
+						     	if(datas[row].FID==1)
+								{
+									//console.log("inside compare"+i);
+									if (price1.indexOf(datas[i].price)==-1)
+									{
+										price1.push(datas[i].price)
+									}
+
+									if (year1.indexOf(datas[i].year)==-1)
+									{
+										year1.push(datas[i].year)
+									}
+								}
+								if(datas[row].FID==2)
+								{
+									//console.log("inside compare"+i);
+									if (price2.indexOf(datas[i].price)==-1)
+									{
+										price2.push(datas[i].price)
+									}
+
+									if (year2.indexOf(datas[i].year)==-1)
+									{
+										year2.push(datas[i].year)
+									}
+								} 
+								if(datas[row].FID==3)
+								{
+									//console.log("inside compare"+i);
+									if (price3.indexOf(datas[i].price)==-1)
+									{
+										price3.push(datas[i].price)
+									}
+
+									if (year3.indexOf(datas[i].year)==-1)
+									{
+										year3.push(datas[i].year)
+									}
+								}  
+						      console.log("Price"+ price1+" "+price2+" "+price3+" " );
+						      console.log("Price"+ year1+" "+year2+" "+year3+" " );
+    							/*var data = [{
+	  								x: years,
+									y: price,
+									type: 'bar'
+								}];*/
+									trace1 = {
+									  type: 'scatter',
+									  x: year1,
+									  y: price1,
+									  mode: 'lines',
+									  name: 'Red',
+									  line: {
+									    color: 'rgb(219, 64, 82)',
+									    width: 3
+									  }
+									};
+
+									trace2 = {
+									  type: 'scatter',
+									  x: year2,
+									  y: price2,
+									  mode: 'lines',
+									  name: 'Blue',
+									  line: {
+									    color: 'rgb(55, 128, 191)',
+									    width: 1
+									  }
+									};
+
+									trace3 = {
+									  type: 'scatter',
+									  x: year3,
+									  y: price3,
+									  mode: 'lines',
+									  name: 'yellow',
+									  line: {
+									    color: 'rgb(255, 217, 102)',
+									    width: 1
+									  }
+									};
+    							var data = [trace1, trace2, trace3];
+								/*var layout = {
+								  title: 'Total Yield of Different Crops in a Year in Tons ',
+								  font:{
+								    family: 'Raleway, snas-serif'
+								  },
+								  showlegend: false,
+								  xaxis: {
+								    tickangle: -45
+								  },
+								  yaxis: {
+								    zeroline: false,
+								    gridwidth: 2
+								  },
+								  bargap :0.05
+								};*/
+
+								Plotly.newPlot('myDiv1', data);
+							});	
+  						</script>
+
+
 			    	<div class="row ">     <!--On slider -->
 			      		<div class="card ">
 							<div id="map" style="width:100%;height:800px;"class="col-md-12"></div>
