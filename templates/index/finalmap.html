@@ -124,25 +124,51 @@
 						<script>
 							var crops=[]
 							var yield=[]
-						    $.getJSON( "../../static/json/crop.json", function( datas ){ 
-						      var plot = []
-						      for (var i=0; i<datas.length;i++){  
-						        if (crops.indexOf(datas[i].Crop)==-1){
-						          crops.push(datas[i].Crop)
-						        }
-						      }
-						  	for (var i=0; i<datas.length;i++){  
-						        if (yield.indexOf(datas[i].Yield)==-1){
-						          yield.push(datas[i].Yield)
-						        }
-						      }
+							var landprices=[]
+							var years=[]
+							$.getJSON( "../../static/json/landprice.json", function( datas ){ 
+								for (var i=0; i<datas.length;i++)
+								{  
+									if (landprices.indexOf(datas[i].price)==-1)
+									{
+									    landprices.push(datas[i].price)
+									}
+								}
+							for (var i=0; i<datas.length;i++)
+							{  
+								if (years.indexOf(datas[i].year)==-1)
+								{
+									years.push(datas[i].year)
+								}
+							}
+						    //$.getJSON( "../../static/json/crop.json", function( datas ){ 
+						     /* var plot = []
+						    	for (var i=0; i<datas.length;i++)
+						      	{  
+							        if (crops.indexOf(datas[i].Crop)==-1)
+							        {
+							          crops.push(datas[i].Crop)
+							        }
+						      	}
+						  		for (var i=0; i<datas.length;i++)
+						  		{  
+							        if (yield.indexOf(datas[i].Yield)==-1)
+							        {
+							          yield.push(datas[i].Yield)
+						        	}
+						      	}
 						      console.log("Crops"+crops);
-						      console.log("Extent"+yield);
+						      console.log("Extent"+yield);*/
     							var data = [{
+	  								x: years,
+									y: price,
+									type: 'bar'
+								}];
+    							/*var data = [{
 	  								x: crops,
 									y: yield,
 									type: 'bar'
-								}];
+								}];*/
 								var layout = {
 								  title: 'Total Yield of Different Crops in a Year in Tons ',
 								  font:{
