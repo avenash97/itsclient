@@ -78,7 +78,7 @@ function hi(farm){
 			var piedata=[["crop","extent"]]
 			for (row in data){
 				var temp=[]
-				console.log("hi!",datas[row].FID);
+				console.log("hi!"+datas[row].FID);
 				if(data[row].FID==farm &&data[row].season==document.getElementById("season").value &&data[row].year==document. getElementById("value").innerHTML ){
 					temp.push(data[row].Crop)
 					temp.push(data[row].Extent)
