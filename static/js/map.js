@@ -336,7 +336,7 @@ function setMap(position) {
 			flightPath.setMap(map);
 			google.maps.event.addListener(flightPath, 'click', (function(marker,row) {
 				return function() {
-					price(data[row].FID)
+					hi(data[row].FID)
 					hello(data[row],data[row].HID)
 					//price(data[row].FID)
 				}
