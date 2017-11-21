@@ -257,8 +257,8 @@
 																}];	
 													console.log("years",years," "," landprices",landprices);
 													Plotly.newPlot('landprice', data);
-															});
-														}
+													});
+											}
 										}
 									    /*$.getJSON( "../../static/json/landprice.json", function( datas ){ 
 									      for (var i=0; i<datas.length;i++){  
@@ -271,13 +271,18 @@
 									          years.push(datas[i].year)
 									        }
 									      }*/
-									    flightPath.setMap(map);
-										google.maps.event.addListener(flightPath, 'click', (function(marker,row) {
-													return function() {
-														price(data[row].FID)
-													}
-												})(flightPath, row));
-						    			
+									    $.getJSON( "../../static/json/farm.json", function( data ) {
+											for (row in data){
+										    flightPath.setMap(map);
+											google.maps.event.addListener(flightPath, 'click', (function(marker,row) 
+											{
+												return function() 
+												{
+													price(data[row].FID)
+												}
+											})(flightPath, row));
+							    			}
+						    			});
 									
 									</script>
 			    				</div>
