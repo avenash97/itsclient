@@ -97,6 +97,7 @@ function price(farm)
 	console.log("inside price");
 	if(farm)
 	{
+		$('#myModal').modal();
 		$.getJSON( "../../static/json/landprice.json", function( datas ){ 
 			for (var i=0; i<datas.length;i++)
 			{  
