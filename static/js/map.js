@@ -98,23 +98,23 @@ function price(farm)
 	if(farm)
 	{
 		$('#myModal').modal();
-		$.getJSON( "../../static/json/landprice.json", function( datas ){ 
-			for (var i=0; i<datas.length;i++)
+		$.getJSON( "../../static/json/landprice.json", function( data ){ 
+			for (var i=0; i<data.length;i++)
 			{  
 				console.log("inside farm");
-				console.log(datas[row].FID);
+				console.log(data[row].FID);
 				console.log(farm);
-				if(datas[row].FID==farm)
+				if(data[row].FID==farm)
 				{
 					console.log("inside compare"+i);
-					if (landprices.indexOf(datas[i].price)==-1)
+					if (landprices.indexOf(data[i].price)==-1)
 					{
-						landprices.push(datas[i].price)
+						landprices.push(data[i].price)
 					}
 
-					if (years.indexOf(datas[i].year)==-1)
+					if (years.indexOf(data[i].year)==-1)
 					{
-						years.push(datas[i].year)
+						years.push(data[i].year)
 					}
 				}   
 			}
