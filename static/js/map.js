@@ -102,9 +102,9 @@ function hi(farm){
 									      			for (var i=0; i<datas.length;i++)
 									      			{  
 									      				console.log("inside farm");
-									      				console.log(data[row].FID);
+									      				console.log(datas[row].FID);
 									      				console.log(farm);
-									      				if(data[row].FID==farm)
+									      				if(datas[row].FID==farm)
 									      				{
 									      					console.log("inside compare");
 													        if (landprices.indexOf(datas[i].price)==-1)
