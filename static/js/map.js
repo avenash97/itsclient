@@ -89,7 +89,44 @@ function hi(farm){
 		});
 	}
 }
+//////////////////////////////////Price////////////////////////////////////////
+										function price(farm)
+										{
+											var landprices=[]
+											var years=[]
+											console.log("inside price");
+											if(farm)
+											{ 
+												$('#myModal').modal();
+												$.getJSON( "../../static/json/landprice.json", function( datas ){ 
+									      			for (var i=0; i<datas.length;i++)
+									      			{  
+									      				console.log("inside farm");
+									      				if(data[row].FID==farm)
+									      				{
+													        if (landprices.indexOf(datas[i].price)==-1)
+													        {
+													          landprices.push(datas[i].price)
+													        }
 
+									        				if (years.indexOf(datas[i].year)==-1)
+									        				{
+									          					years.push(datas[i].year)
+									        				}
+													    }   
+									    			}
+									    			console.log("years"+years);
+						      						console.log(" landprices"+landprices);
+													var data = [{
+									  								x: years,
+																	y: landprices,
+																	type:'scatter'
+																}];	
+													console.log("years",years," "," landprices",landprices);
+													Plotly.newPlot('landprice', data);
+													});
+											}
+										}
 function lease(farm){
 	if(farm){ 
 		$('#myModal1').modal();
@@ -298,6 +335,7 @@ function setMap(position) {
 				return function() {
 					hi(data[row].FID)
 					hello(data[row],data[row].HID)
+					price(data[row].FID)
 				}
 			})(flightPath, row));
 
