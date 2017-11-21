@@ -259,8 +259,8 @@
 										}
 									}
 								}	  
-						      console.log("Price"+ price1+" "+price2+" "+price3+" " );
-						      console.log("Price"+ year1+" "+year2+" "+year3+" " );
+						      console.log("Price"+ price1+" x"+price2+" y"+price3+" " );
+						      console.log("Price"+ year1+" a"+year2+" b"+year3+" " );
     							/*var data = [{
 	  								x: years,
 									y: price,
@@ -270,7 +270,7 @@
 									  type: 'scatter',
 									  x: year1,
 									  y: price1,
-									  mode: 'lines',
+									  mode: 'markers',
 									  name: 'Red',
 									  line: {
 									    color: 'rgb(219, 64, 82)',
@@ -282,7 +282,7 @@
 									  type: 'scatter',
 									  x: year2,
 									  y: price2,
-									  mode: 'lines',
+									  mode: 'markers',
 									  name: 'Blue',
 									  line: {
 									    color: 'rgb(55, 128, 191)',
@@ -294,7 +294,7 @@
 									  type: 'scatter',
 									  x: year3,
 									  y: price3,
-									  mode: 'lines',
+									  mode: 'markers',
 									  name: 'yellow',
 									  line: {
 									    color: 'rgb(255, 217, 102)',
@@ -302,6 +302,18 @@
 									  }
 									};
     							var data = [trace1, trace2, trace3];
+    							var layout = {
+								  title: 'Farm Prices Over The Years', 
+								  xaxis: {
+								    title: 'Year', 
+								    showgrid: false, 
+								    zeroline: false
+								  }, 
+								  yaxis: {
+								    title: 'Cost', 
+								    showline: false
+								  }
+								};
 								/*var layout = {
 								  title: 'Total Yield of Different Crops in a Year in Tons ',
 								  font:{
@@ -318,7 +330,7 @@
 								  bargap :0.05
 								};*/
 
-								Plotly.newPlot('myDiv1', data);
+								Plotly.newPlot('myDiv1', data,layout);
 							});	
   						</script>
 
