@@ -217,45 +217,48 @@
 							var year3=[]
 						    
 						    $.getJSON( "../../static/json/landprice.json", function( datas ){ 
-						     	if(datas[row].FID==1)
-								{
-									//console.log("inside compare"+i);
-									if (price1.indexOf(datas[i].price)==-1)
+						     	for(row in datas)
+						     	{
+							     	if(datas[row].FID==1)
 									{
-										price1.push(datas[i].price)
-									}
+										//console.log("inside compare"+i);
+										if (price1.indexOf(datas[i].price)==-1)
+										{
+											price1.push(datas[i].price)
+										}
 
-									if (year1.indexOf(datas[i].year)==-1)
-									{
-										year1.push(datas[i].year)
+										if (year1.indexOf(datas[i].year)==-1)
+										{
+											year1.push(datas[i].year)
+										}
 									}
-								}
-								if(datas[row].FID==2)
-								{
-									//console.log("inside compare"+i);
-									if (price2.indexOf(datas[i].price)==-1)
+									if(datas[row].FID==2)
 									{
-										price2.push(datas[i].price)
-									}
+										//console.log("inside compare"+i);
+										if (price2.indexOf(datas[i].price)==-1)
+										{
+											price2.push(datas[i].price)
+										}
 
-									if (year2.indexOf(datas[i].year)==-1)
+										if (year2.indexOf(datas[i].year)==-1)
+										{
+											year2.push(datas[i].year)
+										}
+									} 
+									if(datas[row].FID==3)
 									{
-										year2.push(datas[i].year)
-									}
-								} 
-								if(datas[row].FID==3)
-								{
-									//console.log("inside compare"+i);
-									if (price3.indexOf(datas[i].price)==-1)
-									{
-										price3.push(datas[i].price)
-									}
+										//console.log("inside compare"+i);
+										if (price3.indexOf(datas[i].price)==-1)
+										{
+											price3.push(datas[i].price)
+										}
 
-									if (year3.indexOf(datas[i].year)==-1)
-									{
-										year3.push(datas[i].year)
+										if (year3.indexOf(datas[i].year)==-1)
+										{
+											year3.push(datas[i].year)
+										}
 									}
-								}  
+								}	  
 						      console.log("Price"+ price1+" "+price2+" "+price3+" " );
 						      console.log("Price"+ year1+" "+year2+" "+year3+" " );
     							/*var data = [{
