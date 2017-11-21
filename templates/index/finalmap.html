@@ -246,8 +246,17 @@
 									        				}
 													    }   
 									    			}
-												});
-											}
+									    			console.log("years"+years);
+						      						console.log(" landprices"+landprices);
+													var data = [{
+									  								x: years,
+																	y: landprices,
+																	type:'scatter'
+																}];	
+													console.log("years",years," "," landprices",landprices);
+													Plotly.newPlot('landprice', data);
+															});
+														}
 										}
 									    /*$.getJSON( "../../static/json/landprice.json", function( datas ){ 
 									      for (var i=0; i<datas.length;i++){  
@@ -266,16 +275,8 @@
 														price(data[row].FID)
 													}
 												})(flightPath, row));
-						    			console.log("years"+years);
-						      			console.log(" landprices"+landprices);
-										var data = [{
-						  								x: years,
-														y: landprices,
-														type:'scatter'
-													}];	
-										console.log("years",years," "," landprices",landprices);
-										Plotly.newPlot('landprice', data);
-									});
+						    			
+									
 									</script>
 			    				</div>
 			   				</div>
