@@ -227,12 +227,14 @@
 										var years=[]
 										function price(farm)
 										{
+											console.log("inside price");
 											if(farm)
 											{ 
 												$('#myModal').modal();
 												$.getJSON( "../../static/json/landprice.json", function( datas ){ 
 									      			for (var i=0; i<datas.length;i++)
 									      			{  
+									      				console.log("inside farm");
 									      				if(data[row].FID==farm)
 									      				{
 													        if (landprices.indexOf(datas[i].price)==-1)
