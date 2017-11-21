@@ -210,11 +210,12 @@
 									          years.push(datas[i].year)
 									        }
 									      }
-						    
+						    				console.log("years"+years);
+						      				console.log(" landprices"+landprices);
 										var data = [{
 						  								x: years,
 														y: landprices,
-														type:'scatter'
+														type:'bar'
 													}];	
 										console.log("years",years," "," landprices",landprices);
 										Plotly.newPlot('landprice', data);
